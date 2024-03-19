@@ -84,25 +84,25 @@ public class AuthService {
         boolean isHouseBuilt = true;
         if (user.getHouseName() == null) {
             isHouseBuilt = false;
-            int[][] furnitureIds = {
-                    {11, 21, 31, 41, 51, 61, 71, 81, 91, 101, 111, 121, 131, 141, 151, 161, 171, 181},
-                    {12, 22, 32, 42, 52, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182},
-                    {13, 23, 33, 43, 53, 63, 73, 83, 93, 103, 113, 123, 133, 143, 153, 163, 173, 183}
-            };
-
-            for (int i = 1; i < 19; i++) {
-                MissionComplete missionComplete = MissionComplete.builder()
-                        .image("https://s3.ap-northeast-2.amazonaws.com/cookiehouse-image/mission_complete/image/4da8ac24-4f2b-4a0a-b754-1c281f063b83.png2024-03-19T10%3A01%3A56.009893548")
-                        .content("쿠하와 함께라면 여러분도 최우수상")
-                        .mission(
-                                missionRepository.findById((long) i).orElseThrow(
-                                        () ->new NotFoundException(ErrorCode.NOT_FOUND_MISSION_EXCEPTION, ErrorCode.NOT_FOUND_MISSION_EXCEPTION.getMessage())
-                                ))
-                        .user(user)
-                        .furnitureId((long) furnitureIds[(int)(Math.random()*3)][i])
-                        .build();
-                missionCompleteRepository.save(missionComplete);
-            }
+//            int[][] furnitureIds = {
+//                    {11, 21, 31, 41, 51, 61, 71, 81, 91, 101, 111, 121, 131, 141, 151, 161, 171, 181},
+//                    {12, 22, 32, 42, 52, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182},
+//                    {13, 23, 33, 43, 53, 63, 73, 83, 93, 103, 113, 123, 133, 143, 153, 163, 173, 183}
+//            };
+//
+//            for (int i = 1; i < 19; i++) {
+//                MissionComplete missionComplete = MissionComplete.builder()
+//                        .image("https://s3.ap-northeast-2.amazonaws.com/cookiehouse-image/mission_complete/image/4da8ac24-4f2b-4a0a-b754-1c281f063b83.png2024-03-19T10%3A01%3A56.009893548")
+//                        .content("쿠하와 함께라면 여러분도 최우수상")
+//                        .mission(
+//                                missionRepository.findById((long) i).orElseThrow(
+//                                        () ->new NotFoundException(ErrorCode.NOT_FOUND_MISSION_EXCEPTION, ErrorCode.NOT_FOUND_MISSION_EXCEPTION.getMessage())
+//                                ))
+//                        .user(user)
+//                        .furnitureId((long) furnitureIds[(int)(Math.random()*3)][i-1])
+//                        .build();
+//                missionCompleteRepository.save(missionComplete);
+//            }
         }
         return SignInResponseDto.of(user.getId(), user.getUserName(), accessToken, refreshToken, isRegistered, isHouseBuilt);
     }
