@@ -79,13 +79,13 @@ public class MissionService {
             missionMessages.add("가장 좋아하는 계절은?");
             missionMessages.add("나의 소중한 취미");
             missionMessages.add("좋아하는 색깔은 무엇인가요?");
-            missionMessages.add("가장 맛있었던 카페");
-            missionMessages.add("메리 크리스마스! 그동안 저희 서비스를 이용해 주셔서 감사합니다.");
+            missionMessages.add("올해 최고의 음식은?");
+            missionMessages.add("구름톤에서 불태웠던 열정!");
 
-            LocalDate christmas = LocalDate.of(2024, 4, 1);
+            LocalDate christmas = LocalDate.of(2024, 2, 29);
             long remainDays = LocalDate.now().until(christmas, ChronoUnit.DAYS);
-            for (long i = 0; i <= remainDays; i++) {
-                LocalDate date = LocalDate.now().plusDays(i);
+            for (long i = 0; i < 25; i++) {
+                LocalDate date = christmas.plusDays(i);
                 Mission mission = Mission.builder().message(missionMessages.get((int)i)).date(date).build();
                 missionRepository.save(mission);
             }
