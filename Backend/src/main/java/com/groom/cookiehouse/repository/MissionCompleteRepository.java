@@ -14,6 +14,8 @@ public interface MissionCompleteRepository extends JpaRepository<MissionComplete
 
     Boolean existsByUserAndMission(User user, Mission mission);
 
+    Boolean existsByUser(User user);
+
     List<MissionComplete> findAllByUser(User user);
 
 }
