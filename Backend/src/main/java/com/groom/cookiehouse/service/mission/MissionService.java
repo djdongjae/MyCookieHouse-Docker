@@ -33,9 +33,6 @@ public class MissionService {
         if (missionRepository.findAll().size() == 0) {
             List<String> missionMessages = new ArrayList<>();
             missionMessages.add("구름톤에서 불태웠던 열정!");
-            missionMessages.add("가족과 함께 찍은 행복한 순간올리기");
-            missionMessages.add("가장 편안하게 나의 본 모습이 나오는 친구와 추억 올리기");
-            missionMessages.add("티비보면서 뒹굴뒹굴했던 순간 올리기");
             missionMessages.add("내 앨범 best 사진은?");
             missionMessages.add("눈 오는 날 사진 올리기");
             missionMessages.add("기억 남는 여행추억 올리기");
@@ -80,6 +77,9 @@ public class MissionService {
             missionMessages.add("나의 소중한 취미");
             missionMessages.add("좋아하는 색깔은 무엇인가요?");
             missionMessages.add("올해 최고의 음식은?");
+            missionMessages.add("가족과 함께 찍은 행복한 순간올리기");
+            missionMessages.add("가장 편안하게 나의 본 모습이 나오는 친구와 추억 올리기");
+            missionMessages.add("티비보면서 뒹굴뒹굴했던 순간 올리기");
             missionMessages.add("구름톤에서 불태웠던 열정!");
 
             LocalDate christmas = LocalDate.of(2024, 2, 29);

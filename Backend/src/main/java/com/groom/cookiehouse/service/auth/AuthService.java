@@ -81,7 +81,7 @@ public class AuthService {
         user.updateRefreshToken(refreshToken);
         userRepository.save(user);
 
-        Boolean isHouseBuilt = true;
+        boolean isHouseBuilt = true;
         if (user.getHouseName() == null) {
             isHouseBuilt = false;
             int[][] furnitureIds = {
@@ -90,7 +90,7 @@ public class AuthService {
                     {13, 23, 33, 43, 53, 63, 73, 83, 93, 103, 113, 123, 133, 143, 153, 163, 173, 183}
             };
 
-            for (int i = 0; i < 18; i++) {
+            for (int i = 1; i < 19; i++) {
                 MissionComplete missionComplete = MissionComplete.builder()
                         .image("https://s3.ap-northeast-2.amazonaws.com/cookiehouse-image/mission_complete/image/4da8ac24-4f2b-4a0a-b754-1c281f063b83.png2024-03-19T10%3A01%3A56.009893548")
                         .content("쿠하와 함께라면 여러분도 최우수상")
